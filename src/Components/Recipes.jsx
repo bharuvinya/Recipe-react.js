@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 const Recipe=()=>{
     const [data , setData]=useState([])
+    const api='http://localhost:5000/recipe'
     useEffect(()=>{
-        axios.get('http://localhost:8082/recipe').then(
+        axios.get(api).then(
             res=>{
 setData(res.data)
 console.log(res.data)

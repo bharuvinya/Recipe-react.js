@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Modal from './Modal'
+
 const AllRecipes=()=>{
+    
     const [data , setData]=useState([])
     const [index,setIndex]=useState()
     const [popup , setPopup]=useState(false)
     console.log(data)
-
+    const api='http://localhost:5000/recipe'
     useEffect(()=>{
-        axios.get('http://localhost:8082/recipe').then(
+        axios.get(api).then(
             res=>{
 setData(res.data)
 console.log(res.data)
